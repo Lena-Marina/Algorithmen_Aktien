@@ -76,3 +76,18 @@ int main()
 
     return 0;
 }
+
+//Allgemeine Informationen:
+/*Für Hashfunktionen Länge in nicht-kryptografischen Kontexten (z. B. Hash-Tabellen)
+ könnten 128- oder 160-Bit-Hashwerte ausreichen.*/
+
+ /*Für eine Hash-Tabelle mit maximal 1000 Einträgen empfehle ich eine Größe der Hash-Tabelle von etwa 1399 oder 1501.
+ Diese Größe stellt sicher, dass die Tabelle nicht zu voll wird (guter Ladefaktor),
+ und da es sich um eine Primzahl handelt, wird die Verteilung der Einträge optimiert.*/
+
+ /*Der Index in der Hashtabelle Berechnet sich aus: Hashcode%Tabellengröße      % = Modulo*/
+
+ /*Wenn du das Modulo verwendest, wird der Hashcode gleichmäßig über den Indexbereich verteilt.
+ Das hilft dabei, die Kollisionen zu minimieren und stellt sicher, dass die Einträge gut in der Hash-Tabelle verteilt werden.
+ Auch wenn zwei verschiedene Objekte denselben Hashcode haben, sorgt das Modulo dafür,
+ dass sie auf unterschiedliche Indizes abgebildet werden, je nachdem, wie der Hashcode sich verändert.*/
