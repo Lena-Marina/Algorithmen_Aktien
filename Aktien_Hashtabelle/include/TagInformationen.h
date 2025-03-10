@@ -27,7 +27,7 @@ class TagInformationen
         //Low       $858.07
 
         //pointer auf naechsten Tag:
-        TagesInformation* naechsterTag;
+        TagInformationen* naechsterTag;
 };
 
 #endif // TAGINFORMATIONEN_H

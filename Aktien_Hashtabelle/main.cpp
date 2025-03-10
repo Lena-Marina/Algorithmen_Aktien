@@ -1,16 +1,19 @@
 #include <iostream>
+#include <string>
+#include <limits>
 
-#include "head.h"
-
-enum Auswahl {ADD, DEL, IMPORT, SEARCH, PLOT, SAVE, LOAD, QUIT};
+#include "steuerung.h"
 
 int main()
 {
+
+    Steuerung S1;
+
     int run = 1;
     while(run)
     {
         int choice;
-        std::cout << "Waehlen Sie einen der folgenden Menue-Punkte durch Eingabe der zugehoerigen Zahl, oder des Wortes: "<< std::endl;
+        std::cout << "Waehlen Sie einen der folgenden Menue-Punkte durch Eingabe der zugehoerigen Zahl: "<< std::endl;
         std::cout << "0. ADD" <<std::endl;
         std::cout << "1. DEL" <<std::endl;
         std::cout << "2. IMPORT" <<std::endl;
@@ -22,13 +25,14 @@ int main()
 
         std::cout << std::endl;
         std::cin >> choice;
+        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); // Entfernt übrig gebliebenes '\n'
         std::cout << std::endl; //Zeilenabstand
 
         switch(choice)
         {
         case 0: //ADD
             std::cout << "Sie haben 0. ADD gewaehlt" <<std::endl;
-        //Eine Aktie mit Namen, WKN und Kürzel wird hinzugefügt.
+            S1.add();
 
             break;
 
