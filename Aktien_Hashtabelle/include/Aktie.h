@@ -3,25 +3,31 @@
 
 #include <string>
 
-class Aktie
-{
-    public:
-        Aktie(std::string NameAktie, std::string WKNu, std::string kuerzel);
-        Aktie();
-        virtual ~Aktie();
-        Aktie addAktie();
+class Aktie {
 
-        //getter
-        std::string getName() const;
+private:
+    std::string nameAktie;
+    std::string wknAktie; //Wertpapierkennnummer = alpahnumerischer code, daher string
+    std::string kuerzelAktie;
 
-    protected:
+    //Pointer auf aktuellsten Tag
 
-    private:
-        std::string nameAktie;
-        std::string WKN; //Wertpapierkennnummer = alpahnumerischer code, daher string
-        std::string kuerzelAktie;
+//METHODEN
+public:
+    Aktie();
+    Aktie(std::string NameAktie, std::string WKNu, std::string kuerzel);
 
-        //Pointer auf aktuellsten Tag
+     //getter
+    std::string getName() const;
+
+   // Aktie addAktie(); //??
+
+   void printAktie()const;
+
+
+
+
+
 
 };
 

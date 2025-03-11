@@ -4,21 +4,14 @@
 #include <limits>
 #include <iostream>
 
-Steuerung::Steuerung()
-{
+Steuerung::Steuerung() {
     //ctor
 }
 
-Steuerung::~Steuerung()
-{
-    //dtor
-}
 
-void Steuerung::add()
-{
-    std::string NameAktie;
-    std::string WKN;
-    std::string kuerzel;
+
+void Steuerung::add() {
+    std::string NameAktie, WKN, kuerzel;
 
     std::cout << "Bitte geben Sie den Namen der Aktie an: " <<std::endl;
     std::getline(std::cin >> std::ws, NameAktie); //.ws entfernt vorherige Whitespaces //getline sorgt dafür dass auch Leerzeichen eingelesen werden
@@ -29,7 +22,10 @@ void Steuerung::add()
     std::cout << "Bitte geben Sie das Kuerzel der Aktie an: " <<std::endl;
     std::getline(std::cin, kuerzel);
 
+
+
     Aktie neueAktie = Aktie(NameAktie, WKN, kuerzel);
+    neueAktie.printAktie();
 
     H_Name.addAktieByName(neueAktie);
 
@@ -38,17 +34,17 @@ void Steuerung::add()
 }
 
 
-void Steuerung::del(){
+void Steuerung::del() {
 }
-void Steuerung::import(){
+void Steuerung::import() {
 }
-void Steuerung::Search(){
+void Steuerung::Search() {
 }
-void Steuerung::plot(){
+void Steuerung::plot() {
 }
-void Steuerung::save(){
+void Steuerung::save() {
 }
-void Steuerung::load(){
+void Steuerung::load() {
 }
-void Steuerung::quit(){
+void Steuerung::quit() {
 }

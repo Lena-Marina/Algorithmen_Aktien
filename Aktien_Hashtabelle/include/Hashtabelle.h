@@ -3,24 +3,19 @@
 
 # include "Aktie.h"
 
-class Hashtabelle
-{
-    private:
-        Aktie hashtabelle[1399];
-
-    public:
-        Hashtabelle();
-        virtual ~Hashtabelle();
-
-        void addAktieByName(const Aktie& neuAktie);
+class Hashtabelle {
+private:
+    Aktie hashtabelle[1399];
 
 
-    protected:
+//METHODEN
+private:
+    size_t hashfunktion_Name(std::string name);
 
-    private:
-        size_t hashfunktion_Name(std::string name);
+public:
+    Hashtabelle();//Konstruktor
 
-
+    void addAktieByName(const Aktie& neuAktie);
 
 };
 

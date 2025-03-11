@@ -3,27 +3,23 @@
 
 #include "hashtabelle.h"
 
-class Steuerung
-{
-    private:
-        Hashtabelle H_Name;
-        Hashtabelle H_Kuerzel;
+class Steuerung {
+private:
+    Hashtabelle H_Name = Hashtabelle();
+    Hashtabelle H_Kuerzel = Hashtabelle();
 
-    public:
-        Steuerung();
-        virtual ~Steuerung();
+//METHODEN
+public:
+    Steuerung();
 
-        void add();
-        void del();
-        void import();
-        void Search();
-        void plot();
-        void save();
-        void load();
-        void quit();
-
-    protected:
-
+    void add();
+    void del();
+    void import();
+    void Search();
+    void plot();
+    void save();
+    void load();
+    void quit();
 
 };
 

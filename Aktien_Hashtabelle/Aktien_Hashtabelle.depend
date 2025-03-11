@@ -35,3 +35,40 @@
 	<limits>
 	<iostream>
 
+1741724545 source:c:\users\janaa\documents\a_studium\codeblocks\algorithmen_aktien\aktien_hashtabelle\src\aktie.cpp
+	"Aktie.h"
+	<stdexcept>
+	<iostream>
+
+1741723297 c:\users\janaa\documents\a_studium\codeblocks\algorithmen_aktien\aktien_hashtabelle\include\aktie.h
+	<string>
+
+1741723047 source:c:\users\janaa\documents\a_studium\codeblocks\algorithmen_aktien\aktien_hashtabelle\src\hashtabelle.cpp
+	"hashtabelle.h"
+	"aktie.h"
+	<iostream>
+
+1741723578 c:\users\janaa\documents\a_studium\codeblocks\algorithmen_aktien\aktien_hashtabelle\include\hashtabelle.h
+	"Aktie.h"
+
+1741723486 source:c:\users\janaa\documents\a_studium\codeblocks\algorithmen_aktien\aktien_hashtabelle\src\steuerung.cpp
+	"Steuerung.h"
+	<string>
+	<limits>
+	<iostream>
+
+1741723072 c:\users\janaa\documents\a_studium\codeblocks\algorithmen_aktien\aktien_hashtabelle\include\steuerung.h
+	"hashtabelle.h"
+
+1741616860 source:c:\users\janaa\documents\a_studium\codeblocks\algorithmen_aktien\aktien_hashtabelle\src\taginformationen.cpp
+	"TagInformationen.h"
+
+1741722036 c:\users\janaa\documents\a_studium\codeblocks\algorithmen_aktien\aktien_hashtabelle\include\taginformationen.h
+	<string>
+
+1741724508 source:c:\users\janaa\documents\a_studium\codeblocks\algorithmen_aktien\aktien_hashtabelle\main.cpp
+	<iostream>
+	<string>
+	<limits>
+	"steuerung.h"
+
