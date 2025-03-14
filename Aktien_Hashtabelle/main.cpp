@@ -9,7 +9,7 @@ int frageUserNachInput();
 
 int main() {
 
-    Steuerung steuerung = Steuerung();
+    AktienManager steuerung = AktienManager();
 
     bool run = true;
     while(run) {

@@ -5,17 +5,22 @@
 
 class Hashtabelle {
 private:
-    Aktie hashtabelle[1399];
 
+    Aktie hashtabelle[1399];
 
 //METHODEN
 private:
-    size_t hashfunktion_Name(std::string name);
+    size_t calcHashIndex(std::string hashByValue);
 
 public:
     Hashtabelle();//Konstruktor
 
-    void addAktieByName(const Aktie& neuAktie);
+    //Getter
+    const Aktie& getAktieFromTable(int index) const;
+
+
+
+    void addAktieHashtabelle(const Aktie& neuAktie, const std::string hashByValue);
 
 };
 

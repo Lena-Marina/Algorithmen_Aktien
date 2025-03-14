@@ -35,13 +35,13 @@
 			<Add option="-fexceptions" />
 		</Compiler>
 		<Unit filename="include/Aktie.h" />
+		<Unit filename="include/AktienManager.h" />
 		<Unit filename="include/Hashtabelle.h" />
-		<Unit filename="include/Steuerung.h" />
 		<Unit filename="include/TagInformationen.h" />
 		<Unit filename="main.cpp" />
 		<Unit filename="src/Aktie.cpp" />
+		<Unit filename="src/AktienManager.cpp" />
 		<Unit filename="src/Hashtabelle.cpp" />
-		<Unit filename="src/Steuerung.cpp" />
 		<Unit filename="src/TagInformationen.cpp" />
 		<Extensions>
 			<lib_finder disable_auto="1" />

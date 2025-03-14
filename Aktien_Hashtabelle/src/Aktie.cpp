@@ -7,7 +7,7 @@ Aktie::Aktie() {
 }
 
 Aktie::Aktie(std::string NameAktie, std::string WKNu, std::string kuerzel)
-    :nameAktie(NameAktie), wknAktie(WKNu), kuerzelAktie(kuerzel) {
+    :nameAktie(NameAktie), wknAktie(WKNu), kuerzelAktie(kuerzel), wasDelted(false) {
     //ctor
     if(nameAktie.empty()||wknAktie.empty()||kuerzelAktie.empty()) {
         throw std::runtime_error("Eine der Eingaben war leer! Aktie konnte nicht erstellt werden");
@@ -16,9 +16,7 @@ Aktie::Aktie(std::string NameAktie, std::string WKNu, std::string kuerzel)
 }
 
 //getter
-std::string Aktie::getName() const {
-    return this->nameAktie;
-}
+
 
 
 void Aktie::printAktie()const{
