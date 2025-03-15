@@ -41,11 +41,11 @@ void AktienManager::del() {
 }
 void AktienManager::import() {
 }
-void AktienManager::Search() {
+void AktienManager::search(int index) {
 
-      //DEBUGGING
-    const Aktie& aktieFromTable = H_Name.getAktieFromTable(74);
-    const Aktie& aktie2 = H_Kuerzel.getAktieFromTable(540);
+    std::cout<<"search aufgerufen\n";
+    const Aktie& aktieFromTable = H_Name.getAktieFromTable(index);
+    const Aktie& aktie2 = H_Kuerzel.getAktieFromTable(index);
     aktieFromTable.printAktie();
     aktie2.printAktie();
 

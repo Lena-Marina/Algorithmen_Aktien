@@ -10,21 +10,24 @@ private:
     std::string wknAktie; //Wertpapierkennnummer = alpahnumerischer code, daher string
     std::string kuerzelAktie;
 
-    bool wasDelted;
+    bool isDeleted;
 
     //Vector auf aktuellsten Tag
 
 //METHODEN
 public:
     Aktie();
-    Aktie(std::string NameAktie, std::string WKNu, std::string kuerzel);
+    Aktie(std::string nameAktie, std::string wknAktie, std::string kuerzelAktie);
 
     //getter
+
 
 
     Aktie addAktie(); //??
 
     void printAktie()const;
+    bool isSlotAvailable()const;
+
 
 
 

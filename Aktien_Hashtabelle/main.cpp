@@ -2,14 +2,14 @@
 #include <string>
 #include <limits>
 
-#include "steuerung.h"
+#include "AktienManager.h"
 
 //Forward Declaration
 int frageUserNachInput();
 
 int main() {
 
-    AktienManager steuerung = AktienManager();
+    AktienManager aktienManager = AktienManager();
 
     bool run = true;
     while(run) {
@@ -19,7 +19,7 @@ int main() {
         switch(actionUserInput) {
         case 0: //ADD
             std::cout << "Sie haben 0. ADD gewaehlt" <<std::endl;
-            steuerung.add();
+            aktienManager.add();
             break;
 
         case 1: //DEL
@@ -36,6 +36,14 @@ int main() {
             //Eine Aktie wird in der Hashtabelle gesucht und der aktuellste Kurseintrag (Date,Close,Volume,Open,High,Low) wird ausgegeben.
             //Man soll sowohl nach Name als auch nach Kürzel gesucht werden können.
             std::cout << "Sie haben 3. SEARCH gewaehlt" <<std::endl;
+
+            std::cout << "Index:"<<std::endl;
+            int index; //Test
+            std::cin >> index;
+
+            aktienManager.search(index);
+
+
             break;
 
         case 4: //PLOT

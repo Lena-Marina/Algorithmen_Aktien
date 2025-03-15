@@ -12,13 +12,13 @@ private:
 private:
     size_t calcHashIndex(std::string hashByValue);
 
+
 public:
-    Hashtabelle();//Konstruktor
+    //Konstruktor
+    Hashtabelle();
 
     //Getter
     const Aktie& getAktieFromTable(int index) const;
-
-
 
     void addAktieHashtabelle(const Aktie& neuAktie, const std::string hashByValue);
 

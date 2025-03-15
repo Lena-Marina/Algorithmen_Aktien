@@ -35,20 +35,21 @@
 	<limits>
 	<iostream>
 
-1741725707 source:c:\users\janaa\documents\a_studium\codeblocks\algorithmen_aktien\aktien_hashtabelle\src\aktie.cpp
+1742053118 source:c:\users\janaa\documents\a_studium\codeblocks\algorithmen_aktien\aktien_hashtabelle\src\aktie.cpp
 	"Aktie.h"
 	<stdexcept>
 	<iostream>
 
-1741966362 c:\users\janaa\documents\a_studium\codeblocks\algorithmen_aktien\aktien_hashtabelle\include\aktie.h
+1742052981 c:\users\janaa\documents\a_studium\codeblocks\algorithmen_aktien\aktien_hashtabelle\include\aktie.h
 	<string>
 
-1741965503 source:c:\users\janaa\documents\a_studium\codeblocks\algorithmen_aktien\aktien_hashtabelle\src\hashtabelle.cpp
+1742053221 source:c:\users\janaa\documents\a_studium\codeblocks\algorithmen_aktien\aktien_hashtabelle\src\hashtabelle.cpp
 	"hashtabelle.h"
 	"aktie.h"
 	<iostream>
+	<optional>
 
-1741965491 c:\users\janaa\documents\a_studium\codeblocks\algorithmen_aktien\aktien_hashtabelle\include\hashtabelle.h
+1742045599 c:\users\janaa\documents\a_studium\codeblocks\algorithmen_aktien\aktien_hashtabelle\include\hashtabelle.h
 	"Aktie.h"
 
 1741725707 source:c:\users\janaa\documents\a_studium\codeblocks\algorithmen_aktien\aktien_hashtabelle\src\steuerung.cpp
@@ -63,22 +64,22 @@
 1741616860 source:c:\users\janaa\documents\a_studium\codeblocks\algorithmen_aktien\aktien_hashtabelle\src\taginformationen.cpp
 	"TagInformationen.h"
 
-1741725707 c:\users\janaa\documents\a_studium\codeblocks\algorithmen_aktien\aktien_hashtabelle\include\taginformationen.h
+1742034888 c:\users\janaa\documents\a_studium\codeblocks\algorithmen_aktien\aktien_hashtabelle\include\taginformationen.h
 	<string>
 
-1741962978 source:c:\users\janaa\documents\a_studium\codeblocks\algorithmen_aktien\aktien_hashtabelle\main.cpp
+1742034888 source:c:\users\janaa\documents\a_studium\codeblocks\algorithmen_aktien\aktien_hashtabelle\main.cpp
 	<iostream>
 	<string>
 	<limits>
-	"steuerung.h"
+	"AktienManager.h"
 
-1741966294 source:c:\users\janaa\documents\a_studium\codeblocks\algorithmen_aktien\aktien_hashtabelle\src\aktienmanager.cpp
+1742034585 source:c:\users\janaa\documents\a_studium\codeblocks\algorithmen_aktien\aktien_hashtabelle\src\aktienmanager.cpp
 	"AktienManager.h"
 	"Aktie.h"
 	<string>
 	<limits>
 	<iostream>
 
-1741962978 c:\users\janaa\documents\a_studium\codeblocks\algorithmen_aktien\aktien_hashtabelle\include\aktienmanager.h
+1742034585 c:\users\janaa\documents\a_studium\codeblocks\algorithmen_aktien\aktien_hashtabelle\include\aktienmanager.h
 	"hashtabelle.h"
 

@@ -4,13 +4,7 @@
 #include <string>
 
 class TagInformationen {
-public:
-    TagInformationen();
-    virtual ~TagInformationen();
-
-protected:
-
-private:
+    private:
     //Ich war nicht ganz sicher als was für Datentypen wir sie speichern werden. Ich glaube aber, alle außer Date werden eh einfach Intetures sein?
     //Date      03/07/2025
 
@@ -27,6 +21,15 @@ private:
 
     //pointer auf naechsten Tag:
     TagInformationen* naechsterTag;
+
+
+public:
+    TagInformationen();
+    virtual ~TagInformationen();
+
+
+
+
 };
 
 #endif // TAGINFORMATIONEN_H
