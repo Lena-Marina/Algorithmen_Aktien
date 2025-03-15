@@ -2,6 +2,8 @@
 #define STEUERUNG_H
 
 #include "hashtabelle.h"
+#include "TagInformationen.h"
+#include "FunktionenImport.h"
 
 class AktienManager {
 private:

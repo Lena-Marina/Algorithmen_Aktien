@@ -4,6 +4,7 @@
 
 #include "steuerung.h"
 
+
 //Forward Declaration
 int frageUserNachInput();
 
@@ -30,6 +31,10 @@ int main() {
         case 2: //IMPORT
             //Kurswerte für eine Aktie werden aus einer csv Datei importiert
             std::cout << "Sie haben 2. IMPORT gewaehlt" <<std::endl;
+            steuerung.import();
+        //lässt sich momentan austesten, wenn du für den filePath CSV19.csv eingibst
+
+
             break;
 
         case 3: //SEARCH

@@ -2,6 +2,9 @@
 #define AKTIE_H
 
 #include <string>
+#include <vector>
+
+#include "TagInformationen.h"
 
 class Aktie {
 
@@ -13,6 +16,7 @@ private:
     bool wasDelted;
 
     //Vector auf aktuellsten Tag
+    std::vector<TagInformationen> kurse;
 
 //METHODEN
 public:
