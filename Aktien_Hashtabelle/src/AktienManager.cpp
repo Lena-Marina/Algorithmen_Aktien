@@ -61,6 +61,9 @@ void AktienManager::del() {
 }
 void AktienManager::import() {
 }
+
+
+
 void AktienManager::search() {
     std::string searchByChoice;
     std::string searchByValue;

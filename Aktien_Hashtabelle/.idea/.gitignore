@@ -10,3 +10,4 @@
 *.o
 obj/
 Debug/
+*.layout
