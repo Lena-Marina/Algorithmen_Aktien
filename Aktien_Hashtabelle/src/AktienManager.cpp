@@ -2,11 +2,14 @@
 #include "Aktie.h"
 
 #include "FunktionenImport.h"
+#include "FunktionenPLOT.h"
+
 #include "TagInformationen.h"
 
 #include <string>
 #include <limits>
 #include <iostream>
+#include <memory> //für shared Pointer
 
 AktienManager::AktienManager() {
     //ctor
@@ -27,9 +30,6 @@ void AktienManager::add() {
     std::getline(std::cin, kuerzelAktie);
 
 
-
-
-
     try {
         //neues Aktien-Objekt wird erstellt
         Aktie neueAktie = Aktie(nameAktie, wknAktie, kuerzelAktie);
@@ -47,39 +47,32 @@ void AktienManager::add() {
 }
 
 
-void AktienManager::del() {
 
-    while (true) {
-        std::string deleteAktieChoice;
-        std::cout <<"Name der zu löschenden Aktie"<<std::endl;
-        std::getline(std::cin, deleteAktieChoice);
+//void AktienManager::del() {
 
-        try {
-            H_Name.deleteAktieHashtabelle(deleteAktieChoice, true)//searchMode == true (ja, kann besser sein)
-        } catch(const std::invalid_argument& e )
+//    while (true) {
+ //       std::string deleteAktieChoice;
+  //      std::cout <<"Name der zu löschenden Aktie"<<std::endl;
+ //       std::getline(std::cin, deleteAktieChoice);
 
-        }
+   //     try {
+  //          H_Name.deleteAktieHashtabelle(deleteAktieChoice, true)//searchMode == true (ja, kann besser sein)
+  //      } catch(const std::invalid_argument& e )
+
+   //     }
 
     //Wenn eine Aktie gelöscht wird, muss ihr bool wasDeleted auf true gesetzt werden
 
     /*Wenn der Shared pointer in den Aktienobjekten beider Tabellen auf Null gesetzt wird,
     sollten die angehängten TagInformationen vom Heap automatisch freigegeben werden */
-}
-
+//}
 
 void AktienManager::import() {
     //Aktien zum dranhängen vorbereiten
     std::string aktieKuerzel;
 
     std::cout <<"Bitte geben Sie das Kürzerl der Aktie an, für die Sie Kurswerte einlesen wollen: ";
-    std::getline(std::cin, aktieKuerzel);
-
-    //Über das kürzel soll der name gesucht werden (User freundlichkeit)!
-    std::string aktieName;
-
-
-
-
+    std::getline(std::cin >> std::ws, aktieKuerzel);
 
 
     //FilePath einlesen
@@ -101,7 +94,16 @@ void AktienManager::import() {
 
     //In den Hashtabellen (H_name und H_kuerzel) die richtigen Aktien suchen (über name und Kuerzel)
     //und ihren Vector durch den Shared Vekotr (tagInfos) ersetzen
+    size_t index_kuerzel = H_Kuerzel.findPositionInTable(aktieKuerzel, true);
+    H_Kuerzel.getAktieFromTable(index_kuerzel).kurse = tagInfos;
 
+    std::string aktieName = H_Kuerzel.getAktieFromTable(index_kuerzel).getNameAktie();
+    size_t index_name = H_Name.findPositionInTable(aktieName, true);
+    H_Name.getAktieFromTable(index_name).kurse = tagInfos;
+
+    /*DEBUGGING - lässt sich der Shared pointer in der Aktie ersetzen? -> JA! */
+    //printAllTagInformation(H_Kuerzel.getAktieFromTable(index_kuerzel).kurse); //test für kürzeltabelle
+    //printAllTagInformation(H_Name.getAktieFromTable(index_name).kurse); //test für nametabelle
 
 }
 
@@ -182,12 +184,19 @@ void AktienManager::search() {
 void AktienManager::plot() {
 
     //1.) Welche Aktie will die Userin?
+    std::string aktieKuerzel;
 
-    //2.) (shared)Pointer auf Aktie holen
+    std::cout <<"Bitte geben Sie das Kürzerl der Aktie an, deren Schlusswerte Sie sehen wollen: ";
+    std::getline(std::cin >> std::ws, aktieKuerzel);
 
-    //3.) größten und kleinsten Schlusswert der TagInformationsobjekte finden
+    //2.) (shared)Pointer (name = tagInfos) aus Aktie holen
+    size_t index_kuerzel = H_Kuerzel.findPositionInTable(aktieKuerzel, true);
+    std::shared_ptr<std::vector<TagInformationen>> tagInfos = H_Kuerzel.getAktieFromTable(index_kuerzel).kurse;
 
-    //4.) ???
+    //3.) tagInfos an Funktion übergeben
+    plotSchlusskurse(*tagInfos);
+
+
 
 }
 

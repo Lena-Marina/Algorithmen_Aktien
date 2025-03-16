@@ -40,7 +40,7 @@ int main() {
         case 3: //SEARCH
             //Eine Aktie wird in der Hashtabelle gesucht und der aktuellste Kurseintrag (Date,Close,Volume,Open,High,Low) wird ausgegeben.
             //Man soll sowohl nach Name als auch nach Kürzel gesucht werden können.
-            std::cout << "Sie haben 3. SEARCH gewaehlt" <<std::endl;
+            std::cout << "Sie haben 3. SEARCH gewaehlt" << std::endl <<std::endl;
 
             aktienManager.search();
 
@@ -49,7 +49,10 @@ int main() {
 
         case 4: //PLOT
             //Die Schlusskurse der letzten 30 Tage einer Aktie werden als ASCII Grafik ausgegeben, Format ist frei wählbar.
-            std::cout << "Sie haben 4. PLOT gewaehlt" <<std::endl;
+            std::cout << "Sie haben 4. PLOT gewaehlt" << std::endl << std::endl;
+
+            aktienManager.plot();
+
             break;
 
         case 5: //SAVE

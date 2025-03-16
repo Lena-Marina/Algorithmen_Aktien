@@ -1,5 +1,5 @@
-#ifndef STEUERUNG_H
-#define STEUERUNG_H
+#ifndef AKTIENMANAGER_H
+#define AKTIENMANAGER_H
 
 #include "hashtabelle.h"
 #include "TagInformationen.h"
@@ -25,4 +25,4 @@ public:
 
 };
 
-#endif // STEUERUNG_H
+#endif

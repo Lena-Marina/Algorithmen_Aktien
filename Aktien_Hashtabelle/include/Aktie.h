@@ -3,6 +3,7 @@
 
 #include <string>
 #include <vector>
+#include <memory> //für shared pointer
 
 #include "TagInformationen.h"
 
@@ -15,8 +16,7 @@ private:
 
     bool isDeleted;
 
-    //Vector auf aktuellsten Tag
-    std::vector<TagInformationen> kurse;
+
 
 //METHODEN
 public:
@@ -36,10 +36,8 @@ public:
     void printAktie()const;
     bool slotWasDeleted()const;
 
-
-
-
-
+    //Vector auf aktuellsten Tag
+    std::shared_ptr<std::vector<TagInformationen>> kurse;
 
 
 };

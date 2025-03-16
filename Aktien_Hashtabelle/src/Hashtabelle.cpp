@@ -10,13 +10,12 @@ Hashtabelle::Hashtabelle() {
 }
 
 //Getter
-const Aktie& Hashtabelle::getAktieFromTable(int index) const {
+Aktie& Hashtabelle::getAktieFromTable(int index) {
     return hashtabelle[index];
 }
 
 
-size_t Hashtabelle::findPositionInTable(const std::string hashByValue, const bool searchMode) {
-
+size_t Hashtabelle::findPositionInTable(const std::string hashByValue, const bool searchMode) { //search mode FALSE=sucht freien Platz | TRUE = sucht Aktie
 
     /*quadratische Sondierung Formel =  h(k,i)=(h'(k)+c1 + c2 * i^2) mod m
     besser -> alternierende quadratische Sondierung; gleichmäßigere Abdeckung

@@ -36,10 +36,9 @@
 		</Compiler>
 		<Unit filename="include/Aktie.h" />
 		<Unit filename="include/AktienManager.h" />
-		<Unit filename="include/FunktionenImport.h">
-			<Option target="&lt;{~None~}&gt;" />
-		</Unit>
-		<Unit filename="include/FunktionenPLOT.h">
+		<Unit filename="include/FunktionenImport.h" />
+		<Unit filename="include/FunktionenPLOT.h" />
+		<Unit filename="include/FunktionenSAVE.h">
 			<Option target="&lt;{~None~}&gt;" />
 		</Unit>
 		<Unit filename="include/Hashtabelle.h" />
@@ -47,13 +46,12 @@
 		<Unit filename="main.cpp" />
 		<Unit filename="src/Aktie.cpp" />
 		<Unit filename="src/AktienManager.cpp" />
-		<Unit filename="src/FunktionenImport.cpp">
-			<Option target="&lt;{~None~}&gt;" />
-		</Unit>
+		<Unit filename="src/FunktionenImport.cpp" />
 		<Unit filename="src/FunktionenPLOT">
 			<Option target="&lt;{~None~}&gt;" />
 		</Unit>
-		<Unit filename="src/FunktionenPLOT.cpp">
+		<Unit filename="src/FunktionenPLOT.cpp" />
+		<Unit filename="src/FunktionenSAVE.cpp">
 			<Option target="&lt;{~None~}&gt;" />
 		</Unit>
 		<Unit filename="src/Hashtabelle.cpp" />

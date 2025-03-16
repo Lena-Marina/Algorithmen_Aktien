@@ -12,6 +12,8 @@ std::string readPathToFile()
     return filePath;
 }
 
+
+
 std::shared_ptr<std::vector<TagInformationen>> readCSV(const std::string& filePath)
 {
     std::ifstream file(filePath); //erstellt ein Eingabe-Dateistream-Objekt vom Typ std::ifstream und öffnet die Datei die im filePath zu finden ist
@@ -83,6 +85,8 @@ std::shared_ptr<std::vector<TagInformationen>> readCSV(const std::string& filePa
     //der Shared Pointer auf den vector (am Heap) wird zurück gegeben
     return tagInfos;
 }
+
+
 
 //DEBUGGING FUNKTIONEN
 void readTagInformationen(TagInformationen tag)
