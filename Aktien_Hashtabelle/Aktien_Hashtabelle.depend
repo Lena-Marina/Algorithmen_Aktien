@@ -41,22 +41,25 @@
 	<limits>
 	<iostream>
 
-1742069433 source:c:\users\janaa\documents\a_studium\codeblocks\algorithmen_aktien\aktien_hashtabelle\src\aktie.cpp
+1742155075 source:c:\users\janaa\documents\a_studium\codeblocks\algorithmen_aktien\aktien_hashtabelle\src\aktie.cpp
 	"Aktie.h"
 	<stdexcept>
 	<iostream>
 
-1742068449 c:\users\janaa\documents\a_studium\codeblocks\algorithmen_aktien\aktien_hashtabelle\include\aktie.h
+1742155075 c:\users\janaa\documents\a_studium\codeblocks\algorithmen_aktien\aktien_hashtabelle\include\aktie.h
 	<string>
+	<vector>
+	<memory>
+	"TagInformationen.h"
 
-1742069327 source:c:\users\janaa\documents\a_studium\codeblocks\algorithmen_aktien\aktien_hashtabelle\src\hashtabelle.cpp
+1742153073 source:c:\users\janaa\documents\a_studium\codeblocks\algorithmen_aktien\aktien_hashtabelle\src\hashtabelle.cpp
 	"hashtabelle.h"
 	"aktie.h"
 	<iostream>
 	<optional>
 	<stdexcept>
 
-1742069334 c:\users\janaa\documents\a_studium\codeblocks\algorithmen_aktien\aktien_hashtabelle\include\hashtabelle.h
+1742155101 c:\users\janaa\documents\a_studium\codeblocks\algorithmen_aktien\aktien_hashtabelle\include\hashtabelle.h
 	"Aktie.h"
 
 1741725707 source:c:\users\janaa\documents\a_studium\codeblocks\algorithmen_aktien\aktien_hashtabelle\src\steuerung.cpp
@@ -68,27 +71,33 @@
 1741963078 c:\users\janaa\documents\a_studium\codeblocks\algorithmen_aktien\aktien_hashtabelle\include\steuerung.h
 	"hashtabelle.h"
 
-1741616860 source:c:\users\janaa\documents\a_studium\codeblocks\algorithmen_aktien\aktien_hashtabelle\src\taginformationen.cpp
+1742129728 source:c:\users\janaa\documents\a_studium\codeblocks\algorithmen_aktien\aktien_hashtabelle\src\taginformationen.cpp
 	"TagInformationen.h"
 
-1742034888 c:\users\janaa\documents\a_studium\codeblocks\algorithmen_aktien\aktien_hashtabelle\include\taginformationen.h
+1742129728 c:\users\janaa\documents\a_studium\codeblocks\algorithmen_aktien\aktien_hashtabelle\include\taginformationen.h
 	<string>
 
-1742059556 source:c:\users\janaa\documents\a_studium\codeblocks\algorithmen_aktien\aktien_hashtabelle\main.cpp
+1742151543 source:c:\users\janaa\documents\a_studium\codeblocks\algorithmen_aktien\aktien_hashtabelle\main.cpp
 	<iostream>
 	<string>
 	<limits>
 	"AktienManager.h"
 
-1742069194 source:c:\users\janaa\documents\a_studium\codeblocks\algorithmen_aktien\aktien_hashtabelle\src\aktienmanager.cpp
+1742154996 source:c:\users\janaa\documents\a_studium\codeblocks\algorithmen_aktien\aktien_hashtabelle\src\aktienmanager.cpp
 	"AktienManager.h"
 	"Aktie.h"
+	"FunktionenImport.h"
+	"FunktionenPLOT.h"
+	"TagInformationen.h"
 	<string>
 	<limits>
 	<iostream>
+	<memory>
 
-1742059556 c:\users\janaa\documents\a_studium\codeblocks\algorithmen_aktien\aktien_hashtabelle\include\aktienmanager.h
+1742142703 c:\users\janaa\documents\a_studium\codeblocks\algorithmen_aktien\aktien_hashtabelle\include\aktienmanager.h
 	"hashtabelle.h"
+	"TagInformationen.h"
+	"FunktionenImport.h"
 
 1742137331 source:c:\users\lenag\onedrive\desktop\fh_technikum\algorithmen\algorithmen_aktien\aktien_hashtabelle\src\aktienmanager.cpp
 	"AktienManager.h"
@@ -128,5 +137,29 @@
 	"Aktie.h"
 
 1742137345 source:c:\users\lenag\onedrive\desktop\fh_technikum\algorithmen\algorithmen_aktien\aktien_hashtabelle\src\funktionenplot.cpp
+	"FunktionenPLOT.h"
+
+1742129728 c:\users\janaa\documents\a_studium\codeblocks\algorithmen_aktien\aktien_hashtabelle\include\funktionenimport.h
+	<string>
+	<iostream>
+	<fstream>
+	<sstream>
+	<vector>
+	<memory>
+	"TagInformationen.h"
+
+1742142703 c:\users\janaa\documents\a_studium\codeblocks\algorithmen_aktien\aktien_hashtabelle\include\funktionenplot.h
+	<string>
+	<limits>
+	<iostream>
+	<vector>
+	<memory>
+	"TagInformationen.h"
+	"Aktie.h"
+
+1742142703 source:c:\users\janaa\documents\a_studium\codeblocks\algorithmen_aktien\aktien_hashtabelle\src\funktionenimport.cpp
+	"FunktionenImport.h"
+
+1742142703 source:c:\users\janaa\documents\a_studium\codeblocks\algorithmen_aktien\aktien_hashtabelle\src\funktionenplot.cpp
 	"FunktionenPLOT.h"
 

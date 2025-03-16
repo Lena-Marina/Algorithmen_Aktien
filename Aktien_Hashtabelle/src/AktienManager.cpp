@@ -38,7 +38,7 @@ void AktienManager::add() {
         H_Kuerzel.addAktieHashtabelle(neueAktie, kuerzelAktie);
 
     } catch( const std::invalid_argument& e ) {
-//hier sollte eine deleteFunktion für das H_Name aufgerufen werden weil sonst wird der Name angelegt aber das kürzel nicht
+        H_Name.deleteAktieHashtabelle(nameAktie); //das Kürzel wurde bereits verwendet; also muss die bereits angelegte H_Name Aktie gelöscht werden
         std::cout << e.what();
     }
 
@@ -48,28 +48,42 @@ void AktienManager::add() {
 
 
 
-//void AktienManager::del() {
+void AktienManager::del() {
 
-//    while (true) {
- //       std::string deleteAktieChoice;
-  //      std::cout <<"Name der zu löschenden Aktie"<<std::endl;
- //       std::getline(std::cin, deleteAktieChoice);
+    while (true) {
+        std::string deleteAktieChoice;
+        std::cout << "\nWelche Aktie wollen Sie entfernen? (Aktienname) \noder backToMenu" << std::endl;
+        std::getline(std::cin, deleteAktieChoice);
 
-   //     try {
-  //          H_Name.deleteAktieHashtabelle(deleteAktieChoice, true)//searchMode == true (ja, kann besser sein)
-  //      } catch(const std::invalid_argument& e )
+        if (deleteAktieChoice == "backToMenu") {
+            throw std::exception(); //damit die while-Schleife durchbrochen wird
+        }
+        std::string kuerzelAktie = H_Name.getKuerzelFromName(deleteAktieChoice);
 
-   //     }
 
-    //Wenn eine Aktie gelöscht wird, muss ihr bool wasDeleted auf true gesetzt werden
+        try {
+            H_Name.deleteAktieHashtabelle(deleteAktieChoice);
+
+            H_Kuerzel.deleteAktieHashtabelle(kuerzelAktie);
+            break;
+        } catch (const std::invalid_argument& e) { // Aktie nicht vorhanden
+            std::cout << e.what() << std::endl;
+            continue;
+        }
+    }
+
+
+//Wenn eine Aktie gelöscht wird, muss ihr bool wasDeleted auf true gesetzt werden
 
     /*Wenn der Shared pointer in den Aktienobjekten beider Tabellen auf Null gesetzt wird,
     sollten die angehängten TagInformationen vom Heap automatisch freigegeben werden */
-//}
+}
 
 void AktienManager::import() {
     //Aktien zum dranhängen vorbereiten
     std::string aktieKuerzel;
+
+
 
     std::cout <<"Bitte geben Sie das Kürzerl der Aktie an, für die Sie Kurswerte einlesen wollen: ";
     std::getline(std::cin >> std::ws, aktieKuerzel);
@@ -84,22 +98,36 @@ void AktienManager::import() {
     //zwei Subklassen von Hashtabellen, die eine hat den Vektor, die andere einen Pointer auf den vektor
 
     //Prüfen ob einlesen erfolgreich war
-    if (tagInfos) { //Wenn tagInfos kein Nullpointer ist
-        std::cout << "TagInformationen wurden erfolgreich eingelesen!\n um sie einzusehen, wählen sie bitte SEARCH" << std::endl;
-    } else {
+    if (!tagInfos) { //Wenn tagInfos ein Nullpointer ist
         std::cerr << "Fehler beim Einlesen der CSV-Datei!" << std::endl;
     }
+
     /*DEBUGGING*/
     //printAllTagInformation(tagInfos);
 
     //In den Hashtabellen (H_name und H_kuerzel) die richtigen Aktien suchen (über name und Kuerzel)
-    //und ihren Vector durch den Shared Vekotr (tagInfos) ersetzen
-    size_t index_kuerzel = H_Kuerzel.findPositionInTable(aktieKuerzel, true);
-    H_Kuerzel.getAktieFromTable(index_kuerzel).kurse = tagInfos;
+    //und ihren Vector durch den Shared Vektor (tagInfos) ersetzen
 
-    std::string aktieName = H_Kuerzel.getAktieFromTable(index_kuerzel).getNameAktie();
-    size_t index_name = H_Name.findPositionInTable(aktieName, true);
-    H_Name.getAktieFromTable(index_name).kurse = tagInfos;
+    try {
+        size_t index_kuerzel = H_Kuerzel.findPositionInTable(aktieKuerzel, true); //true -> searchModus
+
+        std::string aktieName = H_Kuerzel.getAktieFromTable(index_kuerzel).getNameAktie();
+        size_t index_name = H_Name.findPositionInTable(aktieName, true); //true -> searchModus
+
+        H_Kuerzel.getAktieFromTable(index_kuerzel).kurse = tagInfos;
+        H_Name.getAktieFromTable(index_name).kurse = tagInfos;
+
+        H_Kuerzel.setBoolHatTagesInfoTrue(index_kuerzel);
+        H_Name.setBoolHatTagesInfoTrue(index_name);
+        std::cout << "TagInformationen wurden erfolgreich eingelesen!\nUm sie einzusehen, wählen sie bitte SEARCH" << std::endl;
+    } catch (const std::invalid_argument& e) { // Aktie nicht vorhanden
+        std::cout << e.what() << std::endl;
+
+    }
+
+
+
+
 
     /*DEBUGGING - lässt sich der Shared pointer in der Aktie ersetzen? -> JA! */
     //printAllTagInformation(H_Kuerzel.getAktieFromTable(index_kuerzel).kurse); //test für kürzeltabelle
@@ -113,88 +141,82 @@ void AktienManager::search() {
 
 
     while (true) {
-        std::cout <<"Wählen Sie ein Suchkriterium (Name/Kuerzel)"<<std::endl;
+        std::cout <<"\nWählen Sie ein Suchkriterium (Name/Kuerzel)\nbackToMenu zum abbrechen"<<std::endl;
         std::cin >> searchByChoice;
         std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 
+        if (searchByChoice == "backToMenu") {
+            throw std::exception(); //damit die while-Schleife durchbrochen wird
+        }
+
         if (searchByChoice == "Name") {
-            std::cout <<"Name der gesuchten Aktie: "<<std::endl;
+            std::cout <<"\nName der gesuchten Aktie: "<<std::endl;
             std::getline(std::cin, searchByValue);
 
             try {
-                H_Name.searchAktieHashtabelle(searchByValue);
+                H_Name.searchAndPrintFromHashtabelle(searchByValue);
+                break;
             } catch( const std::invalid_argument& e ) {
 
                 std::cout << e.what();
             }
-
-
-            break;
+            continue;
 
         } else if (searchByChoice == "Kuerzel") {
-            std::cout <<"Kürzel der gesuchten Aktie: "<<std::endl;
+            std::cout <<"\nKürzel der gesuchten Aktie: "<<std::endl;
             std::getline(std::cin, searchByValue);
+            try {
+                H_Kuerzel.searchAndPrintFromHashtabelle(searchByValue);
+                break;
+            } catch(const std::invalid_argument& e ) {
 
-            H_Kuerzel.searchAktieHashtabelle(searchByValue);
-            break;
+                std::cout << e.what();
+                continue;
+            }
+
+
 
         } else {
-            std::cout<<"Ungültige Eingabe!\nVersuchen Sie es erneut!"<<std::endl;
-        }
-    }
-
-    /*
-
-
-        while (true) {
-            std::cout <<"Wählen Sie ein Suchkriterium (Name/Kuerzel)"<<std::endl;
-            std::cin >> searchByChoice;
-         std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-
-            if (searchByChoice == "Name") {
-                std::cout <<"Name der gesuchten Aktie: "<<std::endl;
-                std::getline(std::cin, searchByValue);
-                std::cout <<"Stop "<<std::endl;
-
-                int index = H_Name.findPositionInTable(searchByValue);
-                const Aktie& aktieFromTable = H_Name.getAktieFromTable(index);
-                aktieFromTable.printAktie();
-
-
-
-                break;
-
-            } else if (searchByChoice == "Kuerzel") {
-                std::cout <<"Kürzel der gesuchten Aktie: "<<std::endl;
-                std::getline(std::cin, searchByValue);
-                break;
-
-            } else {
-                std::cout<<"Ungültige Eingabe!\nVersuchen Sie es erneut!"<<std::endl;
-            }
+            std::cout<<"\nUngültiges Suchkriterium!\nVersuchen Sie es erneut!"<<std::endl;
         }
 
 
-
-        //
         //const Aktie& aktie2 = H_Kuerzel.getAktieFromTable(index);
         // aktie2.printAktie();
-    */
+    }
+
 }
+
 void AktienManager::plot() {
-
-    //1.) Welche Aktie will die Userin?
     std::string aktieKuerzel;
+    while (true) {
+        //1.) Welche Aktie will die Userin?
 
-    std::cout <<"Bitte geben Sie das Kürzerl der Aktie an, deren Schlusswerte Sie sehen wollen: ";
-    std::getline(std::cin >> std::ws, aktieKuerzel);
 
-    //2.) (shared)Pointer (name = tagInfos) aus Aktie holen
-    size_t index_kuerzel = H_Kuerzel.findPositionInTable(aktieKuerzel, true);
-    std::shared_ptr<std::vector<TagInformationen>> tagInfos = H_Kuerzel.getAktieFromTable(index_kuerzel).kurse;
+        std::cout <<"\nBitte geben Sie das Kuerzel der Aktie an, deren Schlusswerte Sie sehen wollen: \nbackToMenu zum abbrechen\n";
+        std::getline(std::cin >> std::ws, aktieKuerzel);
 
-    //3.) tagInfos an Funktion übergeben
-    plotSchlusskurse(*tagInfos);
+        if (aktieKuerzel == "backToMenu") {
+            throw std::exception(); //damit die while-Schleife durchbrochen wird
+        }
+
+        try {
+            //2.) (shared)Pointer (name = tagInfos) aus Aktie holen
+            size_t index_kuerzel = H_Kuerzel.findPositionInTable(aktieKuerzel, true);
+            std::shared_ptr<std::vector<TagInformationen>> tagInfos = H_Kuerzel.getAktieFromTable(index_kuerzel).kurse;
+
+            //3.) tagInfos an Funktion übergeben
+            plotSchlusskurse(*tagInfos);
+            break;
+
+
+        } catch (const std::invalid_argument& e ) {
+
+            std::cout << e.what();
+            continue;//Frage erneut
+        }
+
+    }
 
 
 

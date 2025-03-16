@@ -13,13 +13,16 @@ private:
     std::string nameAktie;
     std::string wknAktie; //Wertpapierkennnummer = alpahnumerischer code, daher string
     std::string kuerzelAktie;
-
     bool isDeleted;
+    bool hatTagesinfo;
 
 
 
 //METHODEN
 public:
+    //Vector auf aktuellsten Tag
+    std::shared_ptr<std::vector<TagInformationen>> kurse;
+
     Aktie();
     Aktie(std::string nameAktie, std::string wknAktie, std::string kuerzelAktie);
 
@@ -29,15 +32,18 @@ public:
     std::string getNameAktie()const;
     std::string getKuerzelAktie()const;
 
+    void setSlotToDeleted();
+    void setBoolHatTagesInfo();
 
 
-    Aktie addAktie(); //??
-
+    //Aktie addAktie(); //??
+bool wasSlotDeleted()const;
     void printAktie()const;
-    bool slotWasDeleted()const;
+    void printTagInfoAktie()const;
 
-    //Vector auf aktuellsten Tag
-    std::shared_ptr<std::vector<TagInformationen>> kurse;
+
+
+
 
 
 };

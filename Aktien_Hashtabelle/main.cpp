@@ -23,16 +23,25 @@ int main() {
             aktienManager.add();
             break;
 
-        case 1: //DEL
-            //Aktie wird gelöscht.
-            std::cout << "Sie haben 1. DEL gewaehlt" <<std::endl;
+        case 1: // DEL
+            std::cout << "Sie haben 1. DEL gewaehlt" << std::endl;
+            try {
+                aktienManager.del();
+            } catch (const std::exception& e) { // Exception gefangen
+                std::cerr << "\nHAUPTMENUE" << std::endl;
+                continue; // Zurück zum Hauptmenü
+            }
+            break;
+
+
+
             break;
 
         case 2: //IMPORT
             //Kurswerte für eine Aktie werden aus einer csv Datei importiert
             std::cout << "Sie haben 2. IMPORT gewaehlt" <<std::endl;
             aktienManager.import();
-        //lässt sich momentan austesten, wenn du für den filePath CSV19.csv eingibst
+            //lässt sich momentan austesten, wenn du für den filePath CSV19.csv eingibst
 
 
             break;
@@ -41,19 +50,32 @@ int main() {
             //Eine Aktie wird in der Hashtabelle gesucht und der aktuellste Kurseintrag (Date,Close,Volume,Open,High,Low) wird ausgegeben.
             //Man soll sowohl nach Name als auch nach Kürzel gesucht werden können.
             std::cout << "Sie haben 3. SEARCH gewaehlt" << std::endl <<std::endl;
+            try {
+                aktienManager.search();
 
-            aktienManager.search();
-
-
+            } catch (const std::exception& e) { // Exception gefangen
+                std::cerr << "\nHAUPTMENUE" << std::endl;
+                continue; // Zurück zum Hauptmenü
+            }
             break;
+
+
+
 
         case 4: //PLOT
             //Die Schlusskurse der letzten 30 Tage einer Aktie werden als ASCII Grafik ausgegeben, Format ist frei wählbar.
             std::cout << "Sie haben 4. PLOT gewaehlt" << std::endl << std::endl;
+            try {
+                aktienManager.plot();
 
-            aktienManager.plot();
-
+            } catch (const std::exception& e) { // Exception gefangen
+                std::cerr << "\nHAUPTMENUE" << std::endl;
+                continue; // Zurück zum Hauptmenü
+            }
             break;
+
+
+
 
         case 5: //SAVE
             //Programm speichert die Hashtabelle in eine Datei ab
@@ -97,7 +119,7 @@ int frageUserNachInput() {
         std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');  // Puffer leeren
         return -1;  // Rückgabe eines ungültigen Werts
     }
-
+    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');  // Puffer leeren
     std::cout << std::endl;
 
     return choice;
