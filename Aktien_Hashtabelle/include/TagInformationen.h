@@ -26,9 +26,6 @@ protected:
 
 private:
 
-
-    //pointer auf naechsten Tag:
-    TagInformationen* naechsterTag;
 };
 
 #endif // TAGINFORMATIONEN_H
