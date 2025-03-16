@@ -35,21 +35,22 @@
 	<limits>
 	<iostream>
 
-1742053118 source:c:\users\janaa\documents\a_studium\codeblocks\algorithmen_aktien\aktien_hashtabelle\src\aktie.cpp
+1742069433 source:c:\users\janaa\documents\a_studium\codeblocks\algorithmen_aktien\aktien_hashtabelle\src\aktie.cpp
 	"Aktie.h"
 	<stdexcept>
 	<iostream>
 
-1742052981 c:\users\janaa\documents\a_studium\codeblocks\algorithmen_aktien\aktien_hashtabelle\include\aktie.h
+1742068449 c:\users\janaa\documents\a_studium\codeblocks\algorithmen_aktien\aktien_hashtabelle\include\aktie.h
 	<string>
 
-1742053221 source:c:\users\janaa\documents\a_studium\codeblocks\algorithmen_aktien\aktien_hashtabelle\src\hashtabelle.cpp
+1742069327 source:c:\users\janaa\documents\a_studium\codeblocks\algorithmen_aktien\aktien_hashtabelle\src\hashtabelle.cpp
 	"hashtabelle.h"
 	"aktie.h"
 	<iostream>
 	<optional>
+	<stdexcept>
 
-1742045599 c:\users\janaa\documents\a_studium\codeblocks\algorithmen_aktien\aktien_hashtabelle\include\hashtabelle.h
+1742069334 c:\users\janaa\documents\a_studium\codeblocks\algorithmen_aktien\aktien_hashtabelle\include\hashtabelle.h
 	"Aktie.h"
 
 1741725707 source:c:\users\janaa\documents\a_studium\codeblocks\algorithmen_aktien\aktien_hashtabelle\src\steuerung.cpp
@@ -67,19 +68,19 @@
 1742034888 c:\users\janaa\documents\a_studium\codeblocks\algorithmen_aktien\aktien_hashtabelle\include\taginformationen.h
 	<string>
 
-1742034888 source:c:\users\janaa\documents\a_studium\codeblocks\algorithmen_aktien\aktien_hashtabelle\main.cpp
+1742059556 source:c:\users\janaa\documents\a_studium\codeblocks\algorithmen_aktien\aktien_hashtabelle\main.cpp
 	<iostream>
 	<string>
 	<limits>
 	"AktienManager.h"
 
-1742034585 source:c:\users\janaa\documents\a_studium\codeblocks\algorithmen_aktien\aktien_hashtabelle\src\aktienmanager.cpp
+1742069194 source:c:\users\janaa\documents\a_studium\codeblocks\algorithmen_aktien\aktien_hashtabelle\src\aktienmanager.cpp
 	"AktienManager.h"
 	"Aktie.h"
 	<string>
 	<limits>
 	<iostream>
 
-1742034585 c:\users\janaa\documents\a_studium\codeblocks\algorithmen_aktien\aktien_hashtabelle\include\aktienmanager.h
+1742059556 c:\users\janaa\documents\a_studium\codeblocks\algorithmen_aktien\aktien_hashtabelle\include\aktienmanager.h
 	"hashtabelle.h"
 

@@ -10,7 +10,9 @@ private:
 
 //METHODEN
 private:
+size_t findPositionInTable(const std::string hashByValue, const bool searchMode)const;
     size_t calcHashIndex(std::string hashByValue);
+
 
 
 public:
@@ -21,7 +23,7 @@ public:
     const Aktie& getAktieFromTable(int index) const;
 
     void addAktieHashtabelle(const Aktie& neuAktie, const std::string hashByValue);
-
+    void searchAktieHashtabelle(const std::string searchByValue);
 };
 
 #endif // HASHTABELLE_H

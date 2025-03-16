@@ -16,11 +16,20 @@ Aktie::Aktie(std::string nameAktie, std::string wknAktie, std::string kuerzelAkt
 
 }
 
-//getter
-/*std::string Aktie::getNameAktie(Aktie hashtabelle[index])const{
-return this->nameAktie;
+Aktie::~Aktie() {
+
 }
-*/
+
+
+//getter
+std::string Aktie::getNameAktie()const {
+    return this->nameAktie;
+}
+
+std::string Aktie::getKuerzelAktie()const {
+    return this->kuerzelAktie;
+}
+
 
 void Aktie::printAktie()const {
     std::cout<< "Name: "<< nameAktie<<std::endl;
@@ -30,12 +39,8 @@ void Aktie::printAktie()const {
 
 }
 
-bool Aktie::isSlotAvailable() const {
-    if (nameAktie.empty() || isDeleted) {
-        return true;
-    } else {
-        return false;
-    }
+bool Aktie::slotWasDeleted() const {
+    return isDeleted;
 }
 
 

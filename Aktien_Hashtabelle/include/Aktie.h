@@ -19,14 +19,18 @@ public:
     Aktie();
     Aktie(std::string nameAktie, std::string wknAktie, std::string kuerzelAktie);
 
+    ~Aktie();
+
     //getter
+    std::string getNameAktie()const;
+    std::string getKuerzelAktie()const;
 
 
 
     Aktie addAktie(); //??
 
     void printAktie()const;
-    bool isSlotAvailable()const;
+    bool slotWasDeleted()const;
 
 
 

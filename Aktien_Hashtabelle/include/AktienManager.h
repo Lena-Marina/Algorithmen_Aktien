@@ -15,7 +15,7 @@ public:
     void add();
     void del();
     void import();
-    void search(int index);
+    void search();
     void plot();
     void save();
     void load();

@@ -37,11 +37,7 @@ int main() {
             //Man soll sowohl nach Name als auch nach Kürzel gesucht werden können.
             std::cout << "Sie haben 3. SEARCH gewaehlt" <<std::endl;
 
-            std::cout << "Index:"<<std::endl;
-            int index; //Test
-            std::cin >> index;
-
-            aktienManager.search(index);
+            aktienManager.search();
 
 
             break;
