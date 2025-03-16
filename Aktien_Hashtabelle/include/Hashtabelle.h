@@ -10,7 +10,7 @@ private:
 
 //METHODEN
 private:
-size_t findPositionInTable(const std::string hashByValue, const bool searchMode)const;
+size_t findPositionInTable(const std::string hashByValue, const bool searchMode);
     size_t calcHashIndex(std::string hashByValue);
 
 
