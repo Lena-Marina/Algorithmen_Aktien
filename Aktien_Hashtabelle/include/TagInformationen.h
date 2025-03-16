@@ -4,29 +4,26 @@
 #include <string>
 
 class TagInformationen {
-    private:
-    //Ich war nicht ganz sicher als was für Datentypen wir sie speichern werden. Ich glaube aber, alle außer Date werden eh einfach Intetures sein?
-    //Date      03/07/2025
-
-    //Close     $891.11
-
-    //Volume    7737488
-    int volume;
-
-    //Open      $897.64
-
-    //High      $904.8859
-
-    //Low       $858.07
-
-    //pointer auf naechsten Tag:
-    TagInformationen* naechsterTag;
-
+private:
 
 public:
+    //Constructoren
     TagInformationen();
+    TagInformationen(std::string d, double c, long v, double o, double h, double l);
+
+    //Destructoren
     virtual ~TagInformationen();
 
+    //Datentypen von CHATGPT vorgeschlagen
+    std::string datum;
+    double closeLast;
+    long volume;
+    double open;
+    double high;
+    double low;
+
+
+protected:
 
 
 
